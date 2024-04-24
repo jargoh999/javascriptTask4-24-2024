@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "jest": "^29.7.0"
+  },
+  "name": "taskformyjavascript",
+  "description": "this is javascript assessment\r again again",
+  "version": "1.0.0",
+  "main": "TASK.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
