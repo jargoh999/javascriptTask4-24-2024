@@ -1,3 +1,4 @@
+// const { default: test } = require("node:test");
 let firstTest= require("./TASK.js")
 
 let score = [70,80,90,50]
@@ -6,7 +7,6 @@ let scores = [2,4,6,8]
      const books = ["Book1", "Book2", "Book3", "Book4"];
      const membersTime = ["2:00PM","3:00PM","11:00AM"];  
      let spender ={
-
         "groceries":150,
          "food":500,
          "beans":200
@@ -17,3 +17,4 @@ test("find mapSquare for scores",()=>{expect(firstTest.squareScores(scores)).toE
 test("distribute books",()=>{expect(firstTest.distributeBooks(members,books)).toEqual({ Emily: 'Book1', Jack: 'Book2', Sophia: 'Book3', Daniel: 'Book4' })})
 test("filter time",()=>{expect(firstTest.classesTaskTime(membersTime)).toEqual([ '2:00PM', '3:00PM' ])})
 test("calculate expenses",()=>{expect(firstTest.calculateTotalExpenses(spender)).toEqual(850)})
+test("find mode ", ()=> {expect(firstTest.findMode(scores)).toEqual( ["2","4", "6", "8"])})

@@ -1,3 +1,5 @@
+const { freemem } = require("os");
+
  function calcStudScore(testScore){
         let newArray = []
               newArray.push(testScore.filter( value => value >= 70))
@@ -36,25 +38,38 @@ function calculateTotalExpenses(expenses) {
     }
     return total;
   }
+
+
+  function findMode(arr) {
+    const frequencyMap = {};
+    let maxFrequency = 0;
+    let modes = [];
+    arr.forEach(number => {
+      frequencyMap[number] = (frequencyMap[number] || 0) + 1;
+    });
+    for (const number in frequencyMap) {
+      if (frequencyMap[number] > maxFrequency) {
+        maxFrequency = frequencyMap[number];
+        modes = [number];
+      } else if (frequencyMap[number] === maxFrequency) {
+        modes.push(number);
+      }
+    }
+    return modes.length === 1 ? modes[0] : modes;
+  }
+  
+
+
   
   
  
+ // console.log(mode)
+  
 
+  
 
-    let spender ={
+  
 
-          "groceries":150,
-           "food":500,
-           "beans":200
-    }  
+  
 
-   
-//     const members = ["Emily", "Jack", "Sophia", "Daniel"];
-//     console.log(members.entries())
-//     const books = ["Book1", "Book2", "Book3", "Book4"];   
-//     const membersTime = ["2:00PM","3:00PM","11:00AM"];
-//   console.log(distributeBooks(members,books))
-//   console.log(classesTaskTime(membersTime));
-//   console.log(calculateTotalExpenses(spender))
-
-    module.exports={calcStudScore,increaseScores,squareScores,distributeBooks,classesTaskTime,calculateTotalExpenses}    
+module.exports={calcStudScore,increaseScores,squareScores,distributeBooks,classesTaskTime,calculateTotalExpenses,findMode}    
